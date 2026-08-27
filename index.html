@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>come here</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="favicon.ico"/>
         <script src="https://unpkg.com/favloader@0.4.4/favloader.min.js"></script>
         <script src="https://unpkg.com/favloader@0.4.4/parseGIF.js"></script>
@@ -18,13 +20,16 @@
 
     <body>
         <div class="centerbox">
-            <div>
+            <div class="curtime">
                 <h1 id="currenttime-text" class="currenttime"></h1>
                 <h3 id="currenttime-title" class="currenttime-title">you should sleep tbh</h3>
                 <p id="currenttime-description" class="currenttime-description">my site will still be here tmr dont worry</p>
             </div>
-        </div>
 
+            <footer>
+                <p>pov:my brain <br><img src="applebrain.png" alt="Kimi but with apple as a brain"></p>
+            </footer>
+        </div>
 
         <script>
             const currentTime = new Date().getHours();; 
