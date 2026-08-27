@@ -11,10 +11,49 @@
             });
             favloader.start();
         </script>
+
+        <link rel="stylesheet" href="font.css">
+        <link rel="stylesheet" href="index.css">
     </head>
 
     <body>
-        <h1>Why is earth round?</h1>
-        <p>idk</p>
+        <div class="centerbox">
+            <div>
+                <h1 id="currenttime-text" class="currenttime"></h1>
+                <h3 id="currenttime-title" class="currenttime-title">you should sleep tbh</h3>
+                <p id="currenttime-description" class="currenttime-description">my site will still be here tmr dont worry</p>
+            </div>
+        </div>
+
+
+        <script>
+            const currentTime = new Date().getHours();; 
+            if(currentTime >= 5 && currentTime < 12) {
+                document.getElementById("currenttime-text").textContent = "";
+                document.getElementById("currenttime-text").classList.add("morning");
+                document.getElementById("currenttime-title").classList.add("morning");
+                document.getElementById("currenttime-title").textContent = "oh hi there!";
+                document.getElementById("currenttime-description").textContent = "me hope you have a good day";
+            } else if(currentTime >= 12 && currentTime < 15) {
+                document.getElementById("currenttime-text").textContent = "";
+                document.getElementById("currenttime-text").classList.add("afternoon");
+                document.getElementById("currenttime-title").classList.add("afternoon");
+                document.getElementById("currenttime-title").textContent = "doing good?";
+                document.getElementById("currenttime-description").textContent = "how was your lunch huh";
+            } else if(currentTime >= 15 && currentTime < 19) {
+                document.getElementById("currenttime-text").textContent = "";
+                document.getElementById("currenttime-text").classList.add("evening");
+                document.getElementById("currenttime-title").classList.add("evening");
+                document.getElementById("currenttime-title").textContent = "dont fall asleep just yet";
+                document.getElementById("currenttime-description").textContent = "wat did you have for dinner?";
+            } else {
+                document.getElementById("currenttime-text").textContent = "";
+                document.getElementById("currenttime-text").classList.add("night");
+                document.getElementById("currenttime-title").classList.add("night");
+                document.getElementById("currenttime-title").textContent = "go to sleep pls";
+                document.getElementById("currenttime-description").textContent = "you should sleep tbh";
+            }
+        </script>
     </body>
+
 </html>

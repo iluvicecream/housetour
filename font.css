@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'GrugHand';
+    src: url('./GrugHand-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display:auto;
+}
+
+* {
+    font-family: 'GrugHand', sans-serif;
+}

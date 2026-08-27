@@ -1,0 +1,54 @@
+.centerbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.currenttime.morning {
+    color:#FFC53D;
+}
+
+.currenttime.afternoon {
+    color:#FFE629;
+}
+
+.currenttime.evening {
+    color:#F76B15;
+}
+
+.currenttime.night {
+    color:#3E63DD;
+}
+
+.currenttime {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.currenttime-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.currenttime-title.morning {
+    color:#4F3422;
+}
+
+.currenttime-title.afternoon {
+    color:#473B1F;
+}
+
+.currenttime-title.evening {
+    color:#582D1D;
+}
+
+.currenttime-title.night {
+    color:#1F2D5C;
+}
+
+.currenttime-description {
+    font-size: 1rem;
+    color: #60655F;
+    margin: 0;
+}
