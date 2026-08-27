@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- 𐔌՞. .՞𐦯 -->
+        <!-- Hi there!-->
         <title>come here</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="favicon.ico"/>
         <script src="https://unpkg.com/favloader@0.4.4/favloader.min.js"></script>
         <script src="https://unpkg.com/favloader@0.4.4/parseGIF.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti"></script>
         <script>
             favloader.init({
                 gif: 'favicon-gif.gif'
@@ -27,7 +30,7 @@
             </div>
 
             <footer>
-                <p>pov:my brain <br><img src="applebrain.png" alt="Kimi but with apple as a brain"></p>
+                <p>𐔌՞. .՞𐦯<button id="applebtn" class="applebtn">🍎</button> ༘⋆</p>
             </footer>
         </div>
 
@@ -58,6 +61,29 @@
                 document.getElementById("currenttime-title").textContent = "go to sleep pls";
                 document.getElementById("currenttime-description").textContent = "you should sleep tbh";
             }
+
+            const appleBrainImg = new Image();
+
+            const applebtn = document.getElementById("applebtn");
+            applebtn.addEventListener("click", function() {
+                confetti({
+                    spread: 180,
+                    ticks: 500,
+                    gravity: 1,
+                    decay: .94,
+                    startVelocity: 30,
+                    particleCount: 12,
+                    scalar: 6,
+                    shapes: ["image"],
+                    shapeOptions: {
+                        image: [{
+                            src: "favicon-32x32.png",
+                            width: 32,
+                            height: 32
+                        }]
+                        }
+                    });
+            });
         </script>
     </body>
 

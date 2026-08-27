@@ -68,3 +68,8 @@ footer {
 footer img {
     height: 1.5rem;
 }
+
+.applebtn {
+    background-color: transparent;
+    border: none;
+}
