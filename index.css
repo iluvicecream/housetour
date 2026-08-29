@@ -63,6 +63,7 @@
 footer {
     text-align: center;
     color: #D9D9D9;
+    font-family: 'JetBrainsMono', monospace;
 }
 
 footer img {
@@ -72,4 +73,22 @@ footer img {
 .applebtn {
     background-color: transparent;
     border: none;
+}
+
+
+.menugrid {
+    margin-top: 2rem;
+}
+
+.menugrid a {
+    font-family: 'JetBrainsMono', monospace;
+    color: #60655F;
+    margin-right: 3rem;
+}
+
+.boat {
+    color: #D9D9D9;
+    font-family: 'JetBrainsMono', monospace;
+    text-align: center;
+    margin-top: 5rem;
 }

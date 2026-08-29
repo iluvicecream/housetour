@@ -27,6 +27,14 @@
                 <h1 id="currenttime-text" class="currenttime"></h1>
                 <h3 id="currenttime-title" class="currenttime-title">you should sleep tbh</h3>
                 <p id="currenttime-description" class="currenttime-description">my site will still be here tmr dont worry</p>
+                
+                <div class="menugrid">
+                    <a href="projects.html" class="menuitem">projects</a>
+                    <a href="https://github.com/iluvicecream" class="menuitem">github</a>
+                    <a href="https://perr.dev/blog" class="menuitem">blog</a>
+                </div>
+
+                <p class="boat">⊹ ࣪ ﹏﹏𓊝﹏𓂁﹏ ⊹˖</p>
             </div>
 
             <footer>
@@ -84,6 +92,36 @@
                         }
                     });
             });
+
+            var textValue = [0,0,0,0,0,0];
+            var boatIndex = 3;
+            var sharkIndex = 5;
+            //each second
+            setInterval(function(){
+                var constructText = "";
+
+                if(boatIndex == 0){
+                    boatIndex = 5;
+                }else{
+                    boatIndex--;
+                }
+
+                if(sharkIndex == 0){
+                    sharkIndex = 5;
+                }else{
+                    sharkIndex--;
+                }
+                for(var i = 0; i < textValue.length; i++){
+                    if(i == boatIndex){
+                        constructText += "𓊝";
+                    }else if(i == sharkIndex){
+                        constructText += "𓂁";
+                    }else{
+                        constructText += "﹏";
+                    }
+                }
+                document.getElementsByClassName("boat")[0].innerHTML = "⊹ ࣪ " + constructText + " ⊹˖";
+            },1000);
         </script>
     </body>
 
