@@ -92,3 +92,64 @@ footer img {
     text-align: center;
     margin-top: 5rem;
 }
+
+.projectgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.projectgrid a {
+    color: #60655F;
+    font-family: 'JetBrainsMono', monospace;
+}
+
+.back {
+    text-decoration: none;
+    color: #D9D9D9;
+    font-family: 'JetBrainsMono', monospace;
+    margin-top: 2rem;
+    text-align: center;
+      display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookcase {
+  background-image: url('shelf.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 540px;
+  height: 675px;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  padding: 10px 30px; 
+  box-sizing: border-box;
+}
+
+.shelf-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end; 
+  padding-bottom: 22px; 
+  box-sizing: border-box;
+}
+
+.book {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  height: 80%;
+  text-decoration: none;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  padding-left:3px;
+}
+
+.book:hover {
+  transform: translateY(-5px);
+}

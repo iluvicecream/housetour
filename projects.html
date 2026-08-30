@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 𐔌՞. .՞𐦯 -->
+        <!-- Hi there!-->
+        <title>mi projects</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+        <script src="https://unpkg.com/favloader@0.4.4/favloader.min.js"></script>
+        <script src="https://unpkg.com/favloader@0.4.4/parseGIF.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti"></script>
+        <script>
+            favloader.init({
+                gif: 'favicon-gif.gif'
+            });
+            favloader.start();
+        </script>
+
+        <link rel="stylesheet" href="font.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body>
+        <div class="centerbox">
+            <div class="curtime">
+                <div class="bookcase">
+  <div class="shelf-row">
+    <a class="book" href="https://zolt-doc.perr.dev" style="background-color :#193B2D; color:#F6EDEA;">Zoltd</a>
+    <a class="book" href="https://github.com/iluvicecream/Codex.Sdk" style="background-color: #1D3E56; color: #F6EDEA;">Codex Cs Sdk</a>
+  </div>
+
+  <div class="shelf-row">
+  </div>
+
+</div>
+
+                <a href="index.html" class="back">← back</a>
+            </div>
+
+            <footer>
+                <p>𐔌՞. .՞𐦯<button id="applebtn" class="applebtn">🍎</button> ༘⋆</p>
+            </footer>
+        </div>
+
+        <script>
+            const applebtn = document.getElementById("applebtn");
+            applebtn.addEventListener("click", function() {
+                confetti({
+                    spread: 180,
+                    ticks: 500,
+                    gravity: 1,
+                    decay: .94,
+                    startVelocity: 30,
+                    particleCount: 12,
+                    scalar: 6,
+                    shapes: ["image"],
+                    shapeOptions: {
+                        image: [{
+                            src: "favicon-32x32.png",
+                            width: 32,
+                            height: 32
+                        }]
+                        }
+                    });
+            });
+
+        </script>
+    </body>
+
+</html>
