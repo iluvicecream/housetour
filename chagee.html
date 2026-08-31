@@ -1,134 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <!-- 𐔌՞. .՞𐦯 -->
-        <!-- Hi there!-->
-        <title>receipt of my chagee</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-        <script src="https://unpkg.com/favloader@0.4.4/favloader.min.js"></script>
-        <script src="https://unpkg.com/favloader@0.4.4/parseGIF.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti"></script>
-        <script>
-            favloader.init({
-                gif: 'favicon-gif.gif'
-            });
-            favloader.start();
-        </script>
+  <head>
+    <!-- 𐔌՞. .՞𐦯 -->
+    <!-- Hi there!-->
+    <title>my latest chagee receipt</title>
 
-        <link rel="stylesheet" href="font.css">
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="receipt.css">
-    </head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="asset/img/favicon.ico" />
 
-    <body>
-        <div class="centerbox">
-            <h1>here my latest chagee order yum!</h1>
-           <div class="receipt">
-                <p class="pickupNo">T0001</p>
-                <p class="orderTime">15/08/2026 14:45:11</p>
-                <p class="payAmount">115.00฿</p>
-                <p class="storeName">CHAGEE Central Westgate</p>
-                <div class="orderItems">
-                    <div class="orderItem">
-                        <p class="num">1</p>
-                        <p class="salePrice">115.00</p>
-                        <p class="skuName">BO·YA Jasmine Green Milk Tea</p>
-                        <img class="skuImage" src="https://chagee-management-bucket-sea.oss-ap-southeast-1.aliyuncs.com/image/2026/07/01/2072366406835294208.png" alt="BO·YA Jasmine Green Milk Tea">
-                        <p class="specInfo">Large</p>
-                        <p class="attribute1">Slightly sweet</p>
-                        <p class="attribute2">Hot</p>   
-                    </div>
-                </div>
-                <a href="index.html" class="back">← back</a>
-           </div>
+    <script src="https://unpkg.com/favloader@0.4.4/favloader.min.js"></script>
+    <script src="https://unpkg.com/favloader@0.4.4/parseGIF.js"></script>
 
-            <footer>
-                <p>𐔌՞. .՞𐦯<button id="applebtn" class="applebtn">🍎</button> ༘⋆</p>
-            </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti"></script>
+
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@latest/dist/turbo.es2017-esm.min.js"
+    ></script>
+
+    <script src="asset/js/favicon-loader.js"></script>
+
+    <link rel="stylesheet" href="asset/css/font.css" />
+    <link rel="stylesheet" href="asset/css/index.css" />
+    <link rel="stylesheet" href="asset/css/footer.css" />
+    <link rel="stylesheet" href="asset/css/sidebar.css" />
+
+    <!-- Chagee.html Styling -->
+    <link rel="stylesheet" href="asset/css/chagee.css" />
+  </head>
+
+  <body>
+    <div class="pagebox">
+      <turbo-frame class="sidebar" id="sidebar" src="/content/sidebar.html">
+        <span><img src="asset/img/stamp.png" class="sidebar-logo" /></span>
+      </turbo-frame>
+
+      <turbo-frame class="content" id="content" data-turbo-action="advance">
+        <p>
+          here my latest chagee receipt
+          <button popovertarget="explain-modal" class="explainbtn">
+            what?
+          </button>
+          :
+        </p>
+
+        <p class="receipt-loading">fetching latest perr chagee receipt</p>
+        <div class="receipt loading">
+          <p class="pickupNo"></p>
+          <p class="orderTime"></p>
+          <p class="payAmount"></p>
+          <p class="storeName"></p>
+          <div class="orderItems"></div>
         </div>
 
-        <script>
-    
-            const applebtn = document.getElementById("applebtn");
-            applebtn.addEventListener("click", function() {
-                confetti({
-                    spread: 180,
-                    ticks: 500,
-                    gravity: 1,
-                    decay: .94,
-                    startVelocity: 30,
-                    particleCount: 12,
-                    scalar: 6,
-                    shapes: ["image"],
-                    shapeOptions: {
-                        image: [{
-                            src: "favicon-32x32.png",
-                            width: 32,
-                            height: 32
-                        }]
-                        }
-                    });
-            });
+        <script src="asset/js/chagee.js"></script>
 
-            // fetch the chagee order data from the worker
-            // perr.dev/chagee.api/
-            // response format 
-            /*
-{
-  "pickupNo": "T0078",
-  "orderTime": "15/08/2026 14:45:11",
-  "payAmount": "115.00",
-  "storeName": "CHAGEE Central Westgate",
-  "currency": "฿",
-  "orderItems": [
-    {
-      "num": 1,
-      "salePrice": "115.00",
-      "skuName": "BO·YA Jasmine Green Milk Tea",
-      "skuImage": "https://chagee-management-bucket-sea.oss-ap-southeast-1.aliyuncs.com/image/2026/07/01/2072366406835294208.png",
-      "specInfo": "Large",
-      "attribute1": "Slightly sweet",
-      "attribute2": "Hot"
-    }
-  ]
-}
-            */
-        
-        fetch('https://perr.dev/chagee.api.worker/')
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Chagee order data:', data);
-                    document.querySelector('.pickupNo').textContent = data.pickupNo;
-                    document.querySelector('.orderTime').textContent = data.orderTime;
-                    document.querySelector('.payAmount').textContent = data.payAmount + data.currency;
-                    document.querySelector('.storeName').textContent = data.storeName;
+        <dialog id="explain-modal" popover="manual" class="explainmodal">
+          <p>
+            This is receipt of my latest chagee order.
+            Chagee is a milk tea brand if you wanna know more click <a href="https://www.chagee.com" target="_blank">here</a>
+            Well with chagee you can order via cashier or via app, which i always do via app, as they offer a membership program.
+            So i reverse engineered the app api and make a script to fetch my latest order receipt and display it here, so you can see what i just ordered :>
+          </p>
+            <button popovertarget="explain-modal" class="closebtn">X</button>
+        </dialog>
+      </turbo-frame>
+    </div>
 
-                    const orderItemsContainer = document.querySelector('.orderItems');
-                    orderItemsContainer.innerHTML = ''; // Clear existing items
+    <turbo-frame class="footer" id="footer" src="/content/footer.html">
+    </turbo-frame>
 
-                    data.orderItems.forEach(item => {
-                        const orderItemDiv = document.createElement('div');
-                        orderItemDiv.classList.add('orderItem');
-
-                        orderItemDiv.innerHTML = `
-                            <p class="num">${item.num}</p>
-                            <p class="salePrice">${item.salePrice}</p>
-                            <p class="skuName">${item.skuName}</p>
-                            <img class="skuImage" src="${item.skuImage}" alt="${item.skuName}">
-                            <p class="specInfo">${item.specInfo}</p>
-                            <p class="attribute1">${item.attribute1}</p>
-                            <p class="attribute2">${item.attribute2}</p>
-                        `;
-
-                        orderItemsContainer.appendChild(orderItemDiv);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error fetching Chagee order data:', error);
-                });
-        </script>
-    </body>
-
+    <script src="asset/js/apple-credit.js"></script>
+  </body>
 </html>
