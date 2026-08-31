@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'GrugHand';
-    src: url('./GrugHand-Regular.ttf') format('truetype');
+    src: url('asset/font/GrugHand-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display:auto;
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'JetBrainsMono';
-    src: url('./JetBrainsMono-Regular.woff2') format('woff2');
+    src: url('asset/font/JetBrainsMono-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display:auto;

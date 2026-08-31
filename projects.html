@@ -3,69 +3,51 @@
     <head>
         <!-- 𐔌՞. .՞𐦯 -->
         <!-- Hi there!-->
-        <title>mi projects</title>
+        <title>here my projects</title>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+        <link rel="icon" type="image/x-icon" href="asset/img/favicon.ico"/>
+
         <script src="https://unpkg.com/favloader@0.4.4/favloader.min.js"></script>
         <script src="https://unpkg.com/favloader@0.4.4/parseGIF.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti"></script>
-        <script>
-            favloader.init({
-                gif: 'favicon-gif.gif'
-            });
-            favloader.start();
-        </script>
 
-        <link rel="stylesheet" href="font.css">
-        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti"></script>
+
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@latest/dist/turbo.es2017-esm.min.js"></script>
+
+        <script src="asset/js/favicon-loader.js"></script>
+
+        <link rel="stylesheet" href="asset/css/font.css">
+        <link rel="stylesheet" href="asset/css/index.css">
+        <link rel="stylesheet" href="asset/css/footer.css">
+        <link rel="stylesheet" href="asset/css/sidebar.css">
+
+        <!-- Projects.html Styling -->
+        <link rel="stylesheet" href="asset/css/projects.css">
     </head>
 
     <body>
-        <div class="centerbox">
-            <div class="curtime">
-                <div class="bookcase">
-  <div class="shelf-row">
-    <a class="book" href="https://zolt-doc.perr.dev" style="background-color :#193B2D; color:#F6EDEA;">Zoltd</a>
-    <a class="book" href="https://github.com/iluvicecream/Codex.Sdk" style="background-color: #1D3E56; color: #F6EDEA;">Codex Cs Sdk</a>
-  </div>
+        <div class="pagebox">
+            <turbo-frame class="sidebar" id="sidebar" src="/content/sidebar.html">
+                <span><img src="asset/svg/petal.svg" class="sidebar-logo"></span>   
+            </turbo-frame>
 
-  <div class="shelf-row">
-  </div>
-
-</div>
-
-                <a href="index.html" class="back">← back</a>
-            </div>
-
-            <footer>
-                <p>𐔌՞. .՞𐦯<button id="applebtn" class="applebtn">🍎</button> ༘⋆</p>
-            </footer>
+            <turbo-frame class="content" id="content" data-turbo-action="advance">
+                <div class="projects-shelf">
+                    <img src="asset/img/shelf.png" class="projects-shelf-image" alt="">
+                    <div class="projects-grid">
+                        <a href="https://github.com/iluvicecream/zolt"><img src="asset/img/zolt-book.png" alt="Zolt Book"></a>
+                    </div>
+                </div>
+            </turbo-frame>
         </div>
 
-        <script>
-            const applebtn = document.getElementById("applebtn");
-            applebtn.addEventListener("click", function() {
-                confetti({
-                    spread: 180,
-                    ticks: 500,
-                    gravity: 1,
-                    decay: .94,
-                    startVelocity: 30,
-                    particleCount: 12,
-                    scalar: 6,
-                    shapes: ["image"],
-                    shapeOptions: {
-                        image: [{
-                            src: "favicon-32x32.png",
-                            width: 32,
-                            height: 32
-                        }]
-                        }
-                    });
-            });
+        <footer>
+            <span>𐔌՞. .՞𐦯<button id="applebtn" class="applebtn">🍎</button> ༘⋆</span>
+        </footer>
 
-        </script>
+        <script src="asset/js/apple-credit.js"></script>
     </body>
 
 </html>

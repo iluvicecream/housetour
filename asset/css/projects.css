@@ -1,0 +1,77 @@
+.projects-shelf {
+    position: relative;
+    display: block;
+    container-type: inline-size;
+    width: min(94vw, 640px, calc((100vh - 13rem) * 768 / 959));
+    min-width: 280px;
+    margin: 0 auto;
+    aspect-ratio: 768 / 959;
+    margin-top: 3rem;
+    margin-left: 7rem;
+}
+
+.projects-shelf-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    aspect-ratio: 768 / 959;
+    filter: drop-shadow(0 10px 10px rgba(45, 35, 25, 0.35));
+}
+
+.projects-grid {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 19%);
+    align-items: end;
+    gap: 0.35rem;
+    padding: 0 7% 3%;
+}
+
+.projects-grid a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72%;
+    height: 88%;
+    min-height: 0;
+    min-width: 0;
+    border-left: 3px solid rgb(40, 39, 39);
+    border-right: 1px solid rgba(100, 80, 60, 0.2);
+    box-shadow: 0 2px 4px rgba(45, 35, 25, 0.18),
+            0 8px 18px rgba(45, 35, 25, 0.22);
+    overflow: hidden;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: clamp(0.55rem, 3.2cqw, 1.1rem);
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.projects-grid a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.projects-grid a:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 19%);
+        padding: 0 7% 3%;
+        gap: 0.3rem;
+    }
+
+    .projects-grid a {
+        width: 78%;
+        height: 90%;
+    }
+}

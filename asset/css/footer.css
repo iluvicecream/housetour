@@ -1,0 +1,18 @@
+footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 1rem 0;
+}
+
+footer span {
+    font-size: 0.8rem;
+    margin: 0;
+    color: rgba(0,0,0,0.4);
+}
+
+footer span button {
+    background: none;
+    border: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
