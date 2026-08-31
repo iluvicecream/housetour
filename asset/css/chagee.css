@@ -134,7 +134,7 @@
 
 
 .explainbtn {
-    color: #9e1b22;
+    color: #135029;
     background: none;
     border: none;
     font-size: 1rem;
@@ -146,7 +146,7 @@
     padding: 2rem;
     border-radius: 8px;
     background-color: #faf4e8;
-    border:#9e1b22 1px solid;
+    border:#135029 1px solid;
     box-shadow:
         0 2px 4px rgba(45, 35, 25, 0.06),
         0 10px 28px rgba(45, 35, 25, 0.14),
@@ -154,7 +154,7 @@
 }
 
 .closebtn {
-    color: #9e1b22;
+    color: #135029;
     background: none;
     border: none;
     font-size: 1rem;
