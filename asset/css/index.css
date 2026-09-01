@@ -20,6 +20,19 @@ body {
     gap:5rem;
 }
 
+@media (max-width: 768px) {
+    .pagebox {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
 .content {
     margin-top:5rem;
+}
+@media (max-width: 768px) {
+    .content {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }

@@ -63,15 +63,11 @@
 }
 
 @media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 19%);
-        padding: 0 7% 3%;
-        gap: 0.3rem;
-    }
-
-    .projects-grid a {
-        width: 78%;
-        height: 90%;
+    .projects-shelf {
+        margin-left: 1rem;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        width: auto;
+        aspect-ratio: 768 / 959;
     }
 }
